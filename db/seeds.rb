@@ -16,3 +16,7 @@ ingredients = JSON.parse(ingredients_serialized)
 ingredients['drinks'].each do |ing|
   Ingredient.create(name: ing['strIngredient1'])
 end
+
+10.times do
+  Cocktail.create(name: Faker::Beer.name)
+end

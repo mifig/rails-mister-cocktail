@@ -1,12 +1,14 @@
 class DosesController < ApplicationController
-  before_action :fetch_cocktail_id, except: [:destroy]
+  before_action :fetch_cocktail_id, except: :destroy
 
   def new
     @dose = Dose.new
+    @dose.cocktail = @cocktail
   end
 
   def create
     @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
 
     if @dose.save
       redirect_to cocktail_path(@cocktail)
@@ -17,7 +19,9 @@ class DosesController < ApplicationController
 
   def destroy
     @dose = Dose.find(params[:id])
+    cocktail = @dose.cocktail
     @dose.destroy
+    redirect_to cocktail_path(cocktail)
   end
 
   private
