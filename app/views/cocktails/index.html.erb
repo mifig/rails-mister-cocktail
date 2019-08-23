@@ -1,17 +1,9 @@
-<div class="img-cover">
-  <h1>Find Your Amazing Cocktails Below</h1>
-  <div class="cards">
-      <% @cocktails.each do |cocktail| %>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/cocktail" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title"><%= cocktail.name %></h4>
-            <% cocktail.doses.each do |dose| %>
-            <p class="card-text"><strong><%= dose.ingredient.name %></strong> - <%= dose.description %> </p>
-            <% end %>
-            <%= link_to "Details", cocktail_path(cocktail), class: "btn btn-secondary" %>
-          </div>
-        </div>
-      <% end %>
-  </div>
+<h1>Find Your Amazing Cocktails Below</h1>
+
+<div class="card-list">
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail, class: "a-card" do %>
+      <p><%= cocktail.name %></p>
+    <% end %>
+  <% end %>
 </div>

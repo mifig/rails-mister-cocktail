@@ -1,26 +1,40 @@
-.search-form-control {
+form {
+  display: flex;
   position: relative;
+  flex-direction: column;
+  label {
+    text-align: center;
+    position: absolute;
+    left: 47%;
+    top: -40%;
+    color: white;
+    text-shadow: 2px 2px #ff0000;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0px;
+  }
+  .button {
+    color: rgb(255, 2, 1);
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 30px;
+    border: 4px solid #ff0000;
+    margin: 3px;
+    &:hover {
+      background: #ff0000;
+      color: white;
+    }
+  }
 }
 
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
+.form-control {
+  border: none;
 }
 
-.search-form-control .form-control {
-  height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-}
-
-.search-form-control .form-control:focus {
-  border: 1px solid #ADF9D2;
-  outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.form-group {
-  margin-bottom: 0px;
+input:focus {
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }

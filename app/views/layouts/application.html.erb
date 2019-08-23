@@ -10,13 +10,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= render 'shared/nav' %>
-    <%= link_to :root, class: "navbar-brand" do %>
-      <%= image_tag "https://img.icons8.com/cotton/344/cocktail--v2.png" %>
-    <% end %>
-    <%= yield %>
+    <div class="img-cover">
+      <div class="nav-all">
+        <%= link_to "List Cocktails", :root, class: "add-link" %>
+        <%= link_to new_cocktail_path, class: "add-link bright" do %>
+          <i class='fas fa-plus'></i>   Add Cocktail
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
